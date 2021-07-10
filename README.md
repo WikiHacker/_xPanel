@@ -1,5 +1,5 @@
 
-![](https://raw.githubusercontent.com/frainzy1477/_xPanel/master/xpanel.png)
+![](https://raw.githubusercontent.com/frainzy1477/_xPanel/master/img/xpanel.png)
 
 
 ## 特征
@@ -74,8 +74,19 @@ crontab -e ，添加以下四段
 
 
 管理后端,系统设置->通知设置->通知方式->Telegram信息
+群组会话ID TG Chat ID TG 机器人bot发 /ping 获得ID
+群组 TG Group ID: 在TG群组添加bot然后 /ping 获得ID
+TG密钥 BotFather获得密钥(token)
+
 php cronjob setTelegram
 
+
+Tawk设置
+Tawkchat ID
+xx46d3xxxxdc23xxb8/default
+![](https://raw.githubusercontent.com/frainzy1477/_xPanel/master/img/tawk1.png)
+Tawkchat API
+![](https://raw.githubusercontent.com/frainzy1477/_xPanel/master/img/tawk2.png)
 ```
 
 ## 安装后端 DOCKER BACKEND INSTALL
