@@ -81,11 +81,11 @@ TG密钥 BotFather获得密钥(token)
 php cronjob setTelegram
 
 ```
-#####Tawk设置
-Tawkchat ID
-xx46d3xxxxdc23xxb8/default
+##Tawk设置
+---------------------
+###Tawkchat ID
 ![](https://raw.githubusercontent.com/frainzy1477/_xPanel/master/img/tawk1.png)
-Tawkchat API
+###Tawkchat API
 ![](https://raw.githubusercontent.com/frainzy1477/_xPanel/master/img/tawk2.png)
 
 
