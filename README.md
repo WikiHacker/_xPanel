@@ -23,13 +23,13 @@
 安装Ioncube Loader 
 系统CentOS 7x64 / Ubuntu 18.04+
 安装Ngnix Server
-安装PHP 7.3+
+安装PHP 7.4
 安装Database(mysql or mariab)
 安装Cron
 	
 	
 下载程序代码
-git clone https://github.com/frainzy1477/_xPanel.git tmp -b master && mv tmp/.git . && rm -rf tmp && git reset --hard
+git clone https://github.com/frainzy1477/_xPanel.git tmp -b ssp_comp && mv tmp/.git . && rm -rf tmp && git reset --hard
 
 
 xpanel的配置
