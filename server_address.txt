@@ -1,0 +1,44 @@
+--- Trojan
+abc.com;tcp;port=443|host=gz.aaa.com
+abc.com;tcp;port=443|host=gz.aaa.com|xtls=1|flow=xtls-rprx-direct
+abc.com;grcp;port=443|host=gz.aaa.com
+
+--- Shadowsocks
+abc.com;port=443|server=gz.aaa.com
+
+--- Shadowsocks-Plugin (ws)
+(ws)
+abc.com;443;;ws;;path=/xxx|host=xxxx.com|server=xxx.com
+(ws+tls)
+abc.com;443;;ws;tls;path=/xxx|host=xxxx.com|server=xxx.com
+
+
+--- Vmess
+(tcp)
+abc.com;443;2;tcp;;server=hk.domain.com
+(tcp+tls)
+abc.com;443;2;tcp;tls;server=hk.domain.com
+(ws)
+abc.com;443;;ws;;path=/xxx|host=xxxx.com|server=xxx.com
+(ws+tls)
+abc.com;443;;ws;tls;path=/xxx|host=xxxx.com|server=xxx.com
+(grpc)
+abc.com;443;2;grpc;;server=hk.domain.com
+(grpc+tls)
+abc.com;443;2;grpc;tls;server=hk.domain.com
+(kcp)
+abc.com;443;2;kcp;;server=hk.domain.com
+(kcp+tls)
+abc.com;443;2;kcp;tls;server=hk.domain.com
+
+--- Vless
+(tcp)
+abc.com;443;;ws;;path=/xxx|host=xxxx.com|server=xxx.com|vless=1
+(tcp+tls)
+abc.com;443;;tcp;tls;path=/xxx|host=xxxx.com|server=xxx.com|vless=1
+(tcp+xtls)
+abc.com;443;;ws;xtls;path=/xxx|host=xxxx.com|server=xxx.com|vless=1
+(grpc)
+abc.com;443;2;grpc;;server=hk.domain.com
+(grpc+tls)
+abc.com;443;2;grpc;tls;server=hk.domain.com

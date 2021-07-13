@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Jul 10, 2021 at 07:54 AM
+-- Generation Time: Jul 13, 2021 at 08:39 AM
 -- Server version: 5.5.68-MariaDB
 -- PHP Version: 7.4.20
 
@@ -38,6 +38,23 @@ CREATE TABLE `alive_ip` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `bought`
+--
+
+CREATE TABLE `bought` (
+  `id` bigint(20) NOT NULL,
+  `userid` bigint(20) NOT NULL,
+  `shopid` bigint(20) NOT NULL,
+  `datetime` bigint(20) NOT NULL,
+  `renew` bigint(11) NOT NULL,
+  `coupon` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `price` decimal(12,2) NOT NULL,
+  `is_notified` tinyint(1) NOT NULL DEFAULT '0'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `commission`
 --
 
@@ -68,68 +85,68 @@ CREATE TABLE `config` (
 INSERT INTO `config` (`name`, `value`) VALUES
 ('accessdenied', '0'),
 ('add_emoji_to_server_name', '1'),
-('admin_telegram', NULL),
-('alipay_public_key', NULL),
+('admin_telegram', ''),
+('alipay_public_key', ''),
 ('alipay_url', NULL),
 ('allowaccess', '0'),
-('alphavantage_apikey', NULL),
+('alphavantage_apikey', ''),
 ('api_key', 'rlVxVwIvilbVBQ6UVvZ2'),
-('appName', 'XPANEL'),
-('aws_key', NULL),
+('appName', 'Xpanel'),
+('aws_key', ''),
 ('aws_region', 'eu-west-2'),
-('aws_secret', NULL),
-('backup_email', NULL),
-('backup_password', NULL),
+('aws_secret', ''),
+('backup_email', ''),
+('backup_password', ''),
 ('baseUrl', 'https://xpanel.xxx.com'),
 ('buy_reset', '1'),
-('client_id', NULL),
-('coinpayments_Private_Key', NULL),
-('coinpayments_Public_Key', NULL),
-('cp_ipn_secret', NULL),
-('cp_merchant_id', NULL),
-('crypto_secret', NULL),
+('client_id', ''),
+('coinpayments_Private_Key', ''),
+('coinpayments_Public_Key', ''),
+('cp_ipn_secret', ''),
+('cp_merchant_id', ''),
+('crypto_secret', ''),
 ('email_backup', '0'),
 ('email_verify', '0'),
 ('enablepayments', '1'),
-('enable_alipay', '2'),
+('enable_alipay', '0'),
 ('enable_backup', '0'),
 ('enable_bitcoin', '0'),
 ('enable_ga_tracking', '0'),
-('enable_invite', '1'),
+('enable_invite', '0'),
 ('enable_ios_account', '0'),
 ('enable_kill', '1'),
-('enable_notification', '0'),
+('enable_notification', '1'),
 ('enable_paypal', '0'),
-('enable_reg', '0'),
+('enable_reg', '2'),
 ('enable_tawkchat', '0'),
-('enable_telegram', '0'),
+('enable_telegram', '1'),
 ('enable_wechat', '0'),
 ('exp_reset', '1'),
-('f2fpay_app_id', NULL),
+('f2fpay_app_id', ''),
 ('ga_id', 'ga:xxxxxx'),
 ('h_captcha', '0'),
-('h_captcha_key', NULL),
-('h_captcha_secrete', NULL),
-('ios_account', NULL),
-('ios_passwd', NULL),
-('jkstate', '1'),
+('h_captcha_key', ''),
+('h_captcha_secrete', ''),
+('ios_account', ''),
+('ios_passwd', ''),
+('jkstate', NULL),
 ('lastheart', NULL),
 ('lastpay', NULL),
 ('loginverify', '0'),
 ('logo_path', '/app/app-assets/images/img/X.png'),
 ('mailDriver', '0'),
-('mailgun_domain', NULL),
-('mailgun_key', NULL),
-('mailgun_sender', NULL),
+('mailgun_domain', ''),
+('mailgun_key', ''),
+('mailgun_sender', ''),
 ('maintenance', '0'),
-('merchant_private_key', NULL),
+('merchant_private_key', ''),
 ('mobile_verify', '0'),
 ('muKey', 'xpanel'),
 ('order_exp', '5'),
-('paypal_client', NULL),
-('paypal_mode', 'live'),
-('paypal_secret', NULL),
-('pay_bal', '0'),
+('paypal_client', ''),
+('paypal_mode', 'sandbox'),
+('paypal_secret', ''),
+('pay_bal', '1'),
 ('pwdMethod', 'sha256'),
 ('rate', '6.47'),
 ('rebate', '5'),
@@ -140,36 +157,39 @@ INSERT INTO `config` (`name`, `value`) VALUES
 ('reg_traffic', '1'),
 ('reg_traffic_exp', '1'),
 ('rememberMeDuration', '7'),
-('restrictions', 'China,Singapore,Germany,United Kingdom,Hong Kong,Japan,South Korea,Netherlands,Taiwan,United States'),
+('restrictions', 'China'),
 ('restrict_email', '0'),
 ('restrict_email_list', '@gmail.com,@protonmail.com,@ymail.com,@hotmail.co.uk,@hotmail.com,@qq.com,@outlook.com,@163.com,@126.com,@live.com,@msn.com,@yeah.net,@foxmail.com'),
 ('salt', 'Xpanel20210701'),
-('sendgrid_key', NULL),
-('sendgrid_name', NULL),
-('sendgrid_sender', NULL),
+('sendgrid_key', ''),
+('sendgrid_name', ''),
+('sendgrid_sender', ''),
 ('site_key', 'Xpanel20210701?'),
 ('smsDriver', '0'),
 ('smtp_host', 'smtp.sendgrid.net'),
 ('smtp_name', 'XPANEL'),
-('smtp_password', NULL),
+('smtp_password', ''),
 ('smtp_port', '465'),
 ('smtp_sender', 'no-reply@xpanel.xxx.com'),
 ('smtp_ssl', '1'),
-('smtp_username', NULL),
+('smtp_username', ''),
 ('subUrl', 'https://xpanel.xxx.com/subscribe/'),
-('tawkchat_api', NULL),
-('tawkchat_id', NULL),
+('tawkchat_api', ''),
+('tawkchat_id', ''),
 ('telegram_backup', '0'),
-('telegram_bot', NULL),
-('telegram_chatid', NULL),
-('telegram_gid', NULL),
-('telegram_group_link', NULL),
+('telegram_bot', ''),
+('telegram_chatid', ''),
+('telegram_gid', ''),
+('telegram_group_link', ''),
 ('telegram_group_quiet', '1'),
 ('telegram_request_token', 'sjhueAMAndnenw2k2k1mmsJSJWMWiwiwthgfhgfhx'),
-('telegram_token', NULL),
+('telegram_token', ''),
+('theadpay_key', ''),
+('theadpay_mchid', ''),
+('theadpay_url', ''),
 ('tracking_id', 'UA-xxxxxx-x'),
-('twillo_account_sid', NULL),
-('twillo_auth_token', NULL),
+('twillo_account_sid', ''),
+('twillo_auth_token', ''),
 ('twillo_number', '+165xxxxxxxx'),
 ('WebapiSafe', '1'),
 ('wechat_url', NULL);
@@ -870,9 +890,7 @@ CREATE TABLE `orders` (
 CREATE TABLE `package` (
   `id` bigint(20) NOT NULL,
   `type` varchar(25) DEFAULT NULL,
-  `category` int(5) DEFAULT NULL,
   `name` text,
-  `cn_name` text,
   `content` text NOT NULL,
   `status` int(11) NOT NULL DEFAULT '1',
   `price` decimal(12,2) DEFAULT NULL,
@@ -972,11 +990,6 @@ CREATE TABLE `servers` (
   `name` varchar(128) NOT NULL,
   `type` int(3) NOT NULL,
   `server` varchar(128) NOT NULL,
-  `host` varchar(128) DEFAULT NULL,
-  `vserver` varchar(128) DEFAULT NULL,
-  `network` varchar(5) NOT NULL DEFAULT 'tcp',
-  `security` varchar(5) DEFAULT NULL,
-  `path` varchar(250) DEFAULT '/',
   `method` varchar(50) NOT NULL DEFAULT 'aes-128-gcm',
   `info` varchar(128) DEFAULT NULL,
   `status` varchar(128) DEFAULT NULL,
@@ -990,18 +1003,8 @@ CREATE TABLE `servers` (
   `node_group` int(11) NOT NULL DEFAULT '0',
   `online` tinyint(1) NOT NULL DEFAULT '1',
   `sort` int(3) NOT NULL DEFAULT '0',
-  `alterid` int(5) NOT NULL DEFAULT '0',
-  `mu_only` int(2) NOT NULL DEFAULT '1',
-  `flow` varchar(25) DEFAULT NULL,
-  `port` int(7) NOT NULL DEFAULT '443'
+  `mu_only` int(2) NOT NULL DEFAULT '1'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `servers`
---
-
-INSERT INTO `servers` (`id`, `name`, `type`, `server`, `host`, `vserver`, `network`, `security`, `path`, `method`, `info`, `status`, `traffic_rate`, `node_class`, `node_speedlimit`, `node_connector`, `node_bandwidth`, `node_heartbeat`, `node_ip`, `node_group`, `online`, `sort`, `alterid`, `mu_only`, `flow`, `port`) VALUES
-(1, 'Expired(流量过期)', 1, '8.8.8.8', '8.8.8.8', '', '', '', '', 'none', '', '', 0, -1, 0, 0, 0, 0, '8.8.8.8', 1, 1, 1, 0, 1, '', 0);
 
 -- --------------------------------------------------------
 
@@ -1119,7 +1122,6 @@ CREATE TABLE `user` (
   `ref_by` int(11) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
--- --------------------------------------------------------
 
 --
 -- Table structure for table `user_subscribe_log`
@@ -1175,6 +1177,12 @@ CREATE TABLE `user_traffic_log` (
 -- Indexes for table `alive_ip`
 --
 ALTER TABLE `alive_ip`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `bought`
+--
+ALTER TABLE `bought`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -1353,6 +1361,12 @@ ALTER TABLE `alive_ip`
   MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT;
 
 --
+-- AUTO_INCREMENT for table `bought`
+--
+ALTER TABLE `bought`
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT for table `commission`
 --
 ALTER TABLE `commission`
@@ -1446,7 +1460,7 @@ ALTER TABLE `rule_log`
 -- AUTO_INCREMENT for table `servers`
 --
 ALTER TABLE `servers`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `server_info`
@@ -1476,7 +1490,7 @@ ALTER TABLE `telegram_tasks`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `user_subscribe_log`
