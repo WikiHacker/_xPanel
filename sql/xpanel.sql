@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Jul 13, 2021 at 08:39 AM
+-- Generation Time: Jul 15, 2021 at 12:04 PM
 -- Server version: 5.5.68-MariaDB
 -- PHP Version: 7.4.20
 
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `panel`
+-- Database: `xpanel`
 --
 
 -- --------------------------------------------------------
@@ -90,15 +90,18 @@ INSERT INTO `config` (`name`, `value`) VALUES
 ('alipay_url', NULL),
 ('allowaccess', '0'),
 ('alphavantage_apikey', ''),
-('api_key', 'rlVxVwIvilbVBQ6UVvZ2'),
+('api_key', 'PN6puMODcazWgmWo8oRw'),
 ('appName', 'Xpanel'),
 ('aws_key', ''),
 ('aws_region', 'eu-west-2'),
 ('aws_secret', ''),
 ('backup_email', ''),
 ('backup_password', ''),
-('baseUrl', 'https://xpanel.xxx.com'),
+('baseUrl', ''),
 ('buy_reset', '1'),
+('ClashAndroid', ''),
+('ClashMac', ''),
+('ClashWindows', ''),
 ('client_id', ''),
 ('coinpayments_Private_Key', ''),
 ('coinpayments_Public_Key', ''),
@@ -108,18 +111,18 @@ INSERT INTO `config` (`name`, `value`) VALUES
 ('email_backup', '0'),
 ('email_verify', '0'),
 ('enablepayments', '1'),
-('enable_alipay', '0'),
+('enable_alipay', '6'),
 ('enable_backup', '0'),
 ('enable_bitcoin', '0'),
 ('enable_ga_tracking', '0'),
-('enable_invite', '0'),
+('enable_invite', '1'),
 ('enable_ios_account', '0'),
 ('enable_kill', '1'),
-('enable_notification', '1'),
+('enable_notification', '0'),
 ('enable_paypal', '0'),
-('enable_reg', '2'),
+('enable_reg', '0'),
 ('enable_tawkchat', '0'),
-('enable_telegram', '1'),
+('enable_telegram', '0'),
 ('enable_wechat', '0'),
 ('exp_reset', '1'),
 ('f2fpay_app_id', ''),
@@ -140,7 +143,11 @@ INSERT INTO `config` (`name`, `value`) VALUES
 ('mailgun_sender', ''),
 ('maintenance', '0'),
 ('merchant_private_key', ''),
+('mgate_api_url', ''),
+('mgate_app_id', ''),
+('mgate_app_secret', ''),
 ('mobile_verify', '0'),
+('mugglepayAppSecret', ''),
 ('muKey', 'xpanel'),
 ('order_exp', '5'),
 ('paypal_client', ''),
@@ -148,6 +155,7 @@ INSERT INTO `config` (`name`, `value`) VALUES
 ('paypal_secret', ''),
 ('pay_bal', '1'),
 ('pwdMethod', 'sha256'),
+('Qv2rayLinux', ''),
 ('rate', '6.47'),
 ('rebate', '5'),
 ('reg_connector', '1'),
@@ -164,6 +172,7 @@ INSERT INTO `config` (`name`, `value`) VALUES
 ('sendgrid_key', ''),
 ('sendgrid_name', ''),
 ('sendgrid_sender', ''),
+('ShadowrocketIOS', ''),
 ('site_key', 'Xpanel20210701?'),
 ('smsDriver', '0'),
 ('smtp_host', 'smtp.sendgrid.net'),
@@ -173,7 +182,9 @@ INSERT INTO `config` (`name`, `value`) VALUES
 ('smtp_sender', 'no-reply@xpanel.xxx.com'),
 ('smtp_ssl', '1'),
 ('smtp_username', ''),
-('subUrl', 'https://xpanel.xxx.com/subscribe/'),
+('stripe_key', ''),
+('stripe_webhook', ''),
+('subUrl', ''),
 ('tawkchat_api', ''),
 ('tawkchat_id', ''),
 ('telegram_backup', '0'),
@@ -1121,6 +1132,7 @@ CREATE TABLE `user` (
   `notification` int(3) NOT NULL DEFAULT '1',
   `ref_by` int(11) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
 
 
 --
