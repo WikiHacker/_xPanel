@@ -911,19 +911,6 @@ CREATE TABLE `package` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `package_category`
---
-
-CREATE TABLE `package_category` (
-  `id` int(20) NOT NULL,
-  `name` varchar(250) DEFAULT NULL,
-  `cn_name` varchar(250) DEFAULT NULL,
-  `status` int(2) NOT NULL DEFAULT '0'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `password_reset`
 --
 
@@ -1018,6 +1005,14 @@ CREATE TABLE `servers` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
+
+--
+-- Dumping data for table `servers`
+--
+
+INSERT INTO `servers` (`id`, `name`, `type`, `server`, `method`, `info`, `status`, `traffic_rate`, `node_class`, `node_speedlimit`, `node_connector`, `node_bandwidth`, `node_heartbeat`, `node_ip`, `node_group`, `online`, `sort`, `mu_only`) VALUES
+(1, 'Expired/流量过期了', 1, '8.8.8;port=443|server=google.com', 'aes-256-gcm', 'United Kingdom', NULL, 0, -1, 0, 0, 0, 0, '8.8.8.8', 0, 0, 0, 1);
+
 
 --
 -- Table structure for table `server_info`

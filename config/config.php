@@ -1,57 +1,27 @@
-<?php //004fb
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo("Site error: the ".(php_sapi_name()=='cli'?'ionCube':'<a href="http://www.ioncube.com">ionCube</a>')." PHP Loader needs to be installed. This is a widely used PHP extension for running ionCube protected PHP code, website security and malware blocking.\n\nPlease visit ".(php_sapi_name()=='cli'?'get-loader.ioncube.com':'<a href="http://get-loader.ioncube.com">get-loader.ioncube.com</a>')." for install assistance.\n\n");exit(199);
-?>
-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
+<?php
+$xPanel['debug']        = false; 
+
+$xPanel['timeZone'] 	= "PRC"; 
+    
+$xPanel['default_lang'] = "en"; #默认语 en英文 / zh-cn中文
+
+$xPanel['db_driver']    = 'mysql';   
+$xPanel['db_host']      = 'localhost';
+$xPanel['db_socket']    = '';
+$xPanel['db_database']  = 'xpanel';           
+$xPanel['db_username']  = 'root';             
+$xPanel['db_password']  = 'xpanel';           
+$xPanel['db_charset']   = 'utf8';
+$xPanel['db_collation'] = 'utf8_general_ci'; 
+$xPanel['db_prefix']    = '';  
+
+
+$xPanel['cdn_forwarded_ip'] = array('HTTP_X_FORWARDED_FOR', 'HTTP_ALI_CDN_REAL_IP', 'X-Real-IP', 'True-Client-Ip');
+foreach ($xPanel['cdn_forwarded_ip'] as $cdn_forwarded_ip) {
+    if (isset($_SERVER[$cdn_forwarded_ip])) {
+        $list = explode(',', $_SERVER[$cdn_forwarded_ip]); 
+        $_SERVER['REMOTE_ADDR'] = $list[0];
+        break;
+    }
+}
+ 
