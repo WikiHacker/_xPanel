@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.1
--- https://www.phpmyadmin.net/
+-- version 4.4.15.10
+-- https://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Jul 15, 2021 at 12:04 PM
+-- Generation Time: Jul 16, 2021 at 01:19 AM
 -- Server version: 5.5.68-MariaDB
--- PHP Version: 7.4.20
+-- PHP Version: 7.4.21
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -18,7 +17,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `xpanel`
+-- Database: `trojan`
 --
 
 -- --------------------------------------------------------
@@ -27,7 +26,7 @@ SET time_zone = "+00:00";
 -- Table structure for table `alive_ip`
 --
 
-CREATE TABLE `alive_ip` (
+CREATE TABLE IF NOT EXISTS `alive_ip` (
   `id` bigint(20) NOT NULL,
   `nodeid` int(11) NOT NULL,
   `userid` int(11) NOT NULL,
@@ -41,7 +40,7 @@ CREATE TABLE `alive_ip` (
 -- Table structure for table `bought`
 --
 
-CREATE TABLE `bought` (
+CREATE TABLE IF NOT EXISTS `bought` (
   `id` bigint(20) NOT NULL,
   `userid` bigint(20) NOT NULL,
   `shopid` bigint(20) NOT NULL,
@@ -58,7 +57,7 @@ CREATE TABLE `bought` (
 -- Table structure for table `commission`
 --
 
-CREATE TABLE `commission` (
+CREATE TABLE IF NOT EXISTS `commission` (
   `id` bigint(20) NOT NULL,
   `total` decimal(12,2) NOT NULL,
   `userid` bigint(20) NOT NULL,
@@ -68,6 +67,7 @@ CREATE TABLE `commission` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
+
 
 --
 -- Table structure for table `config`
@@ -211,7 +211,7 @@ INSERT INTO `config` (`name`, `value`) VALUES
 -- Table structure for table `country`
 --
 
-CREATE TABLE `country` (
+CREATE TABLE IF NOT EXISTS `country` (
   `countrycode` char(3) NOT NULL,
   `countryname` varchar(200) NOT NULL,
   `code` char(2) DEFAULT NULL
@@ -479,7 +479,7 @@ INSERT INTO `country` (`countrycode`, `countryname`, `code`) VALUES
 -- Table structure for table `coupon`
 --
 
-CREATE TABLE `coupon` (
+CREATE TABLE IF NOT EXISTS `coupon` (
   `id` bigint(20) NOT NULL,
   `name` varchar(25) DEFAULT NULL,
   `code` text NOT NULL,
@@ -498,7 +498,7 @@ CREATE TABLE `coupon` (
 -- Table structure for table `email_queue`
 --
 
-CREATE TABLE `email_queue` (
+CREATE TABLE IF NOT EXISTS `email_queue` (
   `id` bigint(20) NOT NULL,
   `to_email` varchar(32) COLLATE utf8mb4_unicode_ci NOT NULL,
   `subject` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
@@ -513,7 +513,7 @@ CREATE TABLE `email_queue` (
 -- Table structure for table `email_verify`
 --
 
-CREATE TABLE `email_verify` (
+CREATE TABLE IF NOT EXISTS `email_verify` (
   `id` bigint(20) NOT NULL,
   `email` text NOT NULL,
   `ip` text NOT NULL,
@@ -527,7 +527,7 @@ CREATE TABLE `email_verify` (
 -- Table structure for table `isocodes`
 --
 
-CREATE TABLE `isocodes` (
+CREATE TABLE IF NOT EXISTS `isocodes` (
   `id` int(11) NOT NULL,
   `iso` char(2) NOT NULL,
   `name` varchar(80) NOT NULL,
@@ -535,7 +535,7 @@ CREATE TABLE `isocodes` (
   `iso3` char(3) DEFAULT NULL,
   `numcode` smallint(6) DEFAULT NULL,
   `phonecode` int(5) NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=254 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `isocodes`
@@ -594,7 +594,7 @@ INSERT INTO `isocodes` (`id`, `iso`, `name`, `nicename`, `iso3`, `numcode`, `pho
 (50, 'CD', 'CONGO, THE DEMOCRATIC REPUBLIC OF THE', 'Congo, the Democratic Republic of the', 'COD', 180, 242),
 (51, 'CK', 'COOK ISLANDS', 'Cook Islands', 'COK', 184, 682),
 (52, 'CR', 'COSTA RICA', 'Costa Rica', 'CRI', 188, 506),
-(53, 'CI', 'COTE D\'IVOIRE', 'Cote D\'Ivoire', 'CIV', 384, 225),
+(53, 'CI', 'COTE D''IVOIRE', 'Cote D''Ivoire', 'CIV', 384, 225),
 (54, 'HR', 'CROATIA', 'Croatia', 'HRV', 191, 385),
 (55, 'CU', 'CUBA', 'Cuba', 'CUB', 192, 53),
 (56, 'CY', 'CYPRUS', 'Cyprus', 'CYP', 196, 357),
@@ -653,11 +653,11 @@ INSERT INTO `isocodes` (`id`, `iso`, `name`, `nicename`, `iso3`, `numcode`, `pho
 (109, 'KZ', 'KAZAKHSTAN', 'Kazakhstan', 'KAZ', 398, 7),
 (110, 'KE', 'KENYA', 'Kenya', 'KEN', 404, 254),
 (111, 'KI', 'KIRIBATI', 'Kiribati', 'KIR', 296, 686),
-(112, 'KP', 'KOREA, DEMOCRATIC PEOPLE\'S REPUBLIC OF', 'Korea, Democratic People\'s Republic of', 'PRK', 408, 850),
+(112, 'KP', 'KOREA, DEMOCRATIC PEOPLE''S REPUBLIC OF', 'Korea, Democratic People''s Republic of', 'PRK', 408, 850),
 (113, 'KR', 'KOREA, REPUBLIC OF', 'Korea, Republic of', 'KOR', 410, 82),
 (114, 'KW', 'KUWAIT', 'Kuwait', 'KWT', 414, 965),
 (115, 'KG', 'KYRGYZSTAN', 'Kyrgyzstan', 'KGZ', 417, 996),
-(116, 'LA', 'LAO PEOPLE\'S DEMOCRATIC REPUBLIC', 'Lao People\'s Democratic Republic', 'LAO', 418, 856),
+(116, 'LA', 'LAO PEOPLE''S DEMOCRATIC REPUBLIC', 'Lao People''s Democratic Republic', 'LAO', 418, 856),
 (117, 'LV', 'LATVIA', 'Latvia', 'LVA', 428, 371),
 (118, 'LB', 'LEBANON', 'Lebanon', 'LBN', 422, 961),
 (119, 'LS', 'LESOTHO', 'Lesotho', 'LSO', 426, 266),
@@ -802,7 +802,7 @@ INSERT INTO `isocodes` (`id`, `iso`, `name`, `nicename`, `iso3`, `numcode`, `pho
 -- Table structure for table `link`
 --
 
-CREATE TABLE `link` (
+CREATE TABLE IF NOT EXISTS `link` (
   `id` bigint(20) NOT NULL,
   `type` int(11) NOT NULL,
   `address` text NOT NULL,
@@ -821,7 +821,7 @@ CREATE TABLE `link` (
 -- Table structure for table `login_ip`
 --
 
-CREATE TABLE `login_ip` (
+CREATE TABLE IF NOT EXISTS `login_ip` (
   `id` bigint(20) NOT NULL,
   `userid` bigint(20) NOT NULL,
   `ip` text NOT NULL,
@@ -835,7 +835,7 @@ CREATE TABLE `login_ip` (
 -- Table structure for table `mobile_verify`
 --
 
-CREATE TABLE `mobile_verify` (
+CREATE TABLE IF NOT EXISTS `mobile_verify` (
   `id` bigint(20) NOT NULL,
   `mobile` text CHARACTER SET utf8,
   `code` text CHARACTER SET utf8,
@@ -848,7 +848,7 @@ CREATE TABLE `mobile_verify` (
 -- Table structure for table `notice`
 --
 
-CREATE TABLE `notice` (
+CREATE TABLE IF NOT EXISTS `notice` (
   `id` int(11) NOT NULL,
   `date` datetime NOT NULL,
   `content` longtext NOT NULL,
@@ -861,7 +861,7 @@ CREATE TABLE `notice` (
 -- Table structure for table `orders`
 --
 
-CREATE TABLE `orders` (
+CREATE TABLE IF NOT EXISTS `orders` (
   `id` bigint(20) NOT NULL,
   `close_date` bigint(20) DEFAULT NULL,
   `create_date` bigint(20) DEFAULT NULL,
@@ -898,10 +898,11 @@ CREATE TABLE `orders` (
 -- Table structure for table `package`
 --
 
-CREATE TABLE `package` (
+CREATE TABLE IF NOT EXISTS `package` (
   `id` bigint(20) NOT NULL,
   `type` varchar(25) DEFAULT NULL,
   `name` text,
+  `cn_name` text,
   `content` text NOT NULL,
   `status` int(11) NOT NULL DEFAULT '1',
   `price` decimal(12,2) DEFAULT NULL,
@@ -914,7 +915,7 @@ CREATE TABLE `package` (
 -- Table structure for table `password_reset`
 --
 
-CREATE TABLE `password_reset` (
+CREATE TABLE IF NOT EXISTS `password_reset` (
   `id` int(11) NOT NULL,
   `email` varchar(32) NOT NULL,
   `token` varchar(128) NOT NULL,
@@ -928,7 +929,7 @@ CREATE TABLE `password_reset` (
 -- Table structure for table `pay_qrcode`
 --
 
-CREATE TABLE `pay_qrcode` (
+CREATE TABLE IF NOT EXISTS `pay_qrcode` (
   `id` bigint(20) NOT NULL,
   `pay_url` varchar(255) DEFAULT NULL,
   `price` decimal(12,2) DEFAULT NULL,
@@ -941,12 +942,12 @@ CREATE TABLE `pay_qrcode` (
 -- Table structure for table `rule_list`
 --
 
-CREATE TABLE `rule_list` (
+CREATE TABLE IF NOT EXISTS `rule_list` (
   `id` int(11) NOT NULL,
   `name` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
   `regex` longtext COLLATE utf8mb4_unicode_ci,
   `type` int(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `rule_list`
@@ -968,7 +969,7 @@ INSERT INTO `rule_list` (`id`, `name`, `regex`, `type`) VALUES
 -- Table structure for table `rule_log`
 --
 
-CREATE TABLE `rule_log` (
+CREATE TABLE IF NOT EXISTS `rule_log` (
   `id` bigint(20) NOT NULL,
   `user_id` bigint(20) NOT NULL,
   `list_id` bigint(20) NOT NULL,
@@ -983,7 +984,7 @@ CREATE TABLE `rule_log` (
 -- Table structure for table `servers`
 --
 
-CREATE TABLE `servers` (
+CREATE TABLE IF NOT EXISTS `servers` (
   `id` int(11) NOT NULL,
   `name` varchar(128) NOT NULL,
   `type` int(3) NOT NULL,
@@ -1007,18 +1008,10 @@ CREATE TABLE `servers` (
 -- --------------------------------------------------------
 
 --
--- Dumping data for table `servers`
---
-
-INSERT INTO `servers` (`id`, `name`, `type`, `server`, `method`, `info`, `status`, `traffic_rate`, `node_class`, `node_speedlimit`, `node_connector`, `node_bandwidth`, `node_heartbeat`, `node_ip`, `node_group`, `online`, `sort`, `mu_only`) VALUES
-(1, 'Expired/流量过期了', 1, '8.8.8;port=443|server=google.com', 'aes-256-gcm', 'United Kingdom', NULL, 0, -1, 0, 0, 0, 0, '8.8.8.8', 0, 0, 0, 1);
-
-
---
 -- Table structure for table `server_info`
 --
 
-CREATE TABLE `server_info` (
+CREATE TABLE IF NOT EXISTS `server_info` (
   `id` int(11) NOT NULL,
   `node_id` int(11) NOT NULL,
   `uptime` float NOT NULL,
@@ -1032,7 +1025,7 @@ CREATE TABLE `server_info` (
 -- Table structure for table `server_online_log`
 --
 
-CREATE TABLE `server_online_log` (
+CREATE TABLE IF NOT EXISTS `server_online_log` (
   `id` int(11) NOT NULL,
   `node_id` int(11) NOT NULL,
   `online_user` int(11) NOT NULL,
@@ -1045,7 +1038,7 @@ CREATE TABLE `server_online_log` (
 -- Table structure for table `telegram_session`
 --
 
-CREATE TABLE `telegram_session` (
+CREATE TABLE IF NOT EXISTS `telegram_session` (
   `id` bigint(20) NOT NULL,
   `user_id` bigint(20) NOT NULL,
   `type` int(11) DEFAULT NULL,
@@ -1059,8 +1052,8 @@ CREATE TABLE `telegram_session` (
 -- Table structure for table `telegram_tasks`
 --
 
-CREATE TABLE `telegram_tasks` (
-  `id` int(11) UNSIGNED NOT NULL,
+CREATE TABLE IF NOT EXISTS `telegram_tasks` (
+  `id` int(11) unsigned NOT NULL,
   `type` int(8) NOT NULL COMMENT '任务类型',
   `status` int(2) NOT NULL DEFAULT '0' COMMENT '任务状态',
   `chatid` varchar(128) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0' COMMENT 'Telegram Chat ID',
@@ -1079,7 +1072,7 @@ CREATE TABLE `telegram_tasks` (
 -- Table structure for table `tmp_price`
 --
 
-CREATE TABLE `tmp_price` (
+CREATE TABLE IF NOT EXISTS `tmp_price` (
   `price` varchar(255) NOT NULL,
   `oid` varchar(255) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
@@ -1090,7 +1083,7 @@ CREATE TABLE `tmp_price` (
 -- Table structure for table `user`
 --
 
-CREATE TABLE `user` (
+CREATE TABLE IF NOT EXISTS `user` (
   `id` int(11) NOT NULL,
   `user_name` varchar(128) CHARACTER SET utf8mb4 NOT NULL,
   `email` varchar(32) NOT NULL,
@@ -1128,14 +1121,14 @@ CREATE TABLE `user` (
   `ref_by` int(11) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-
+-- --------------------------------------------------------
 
 --
 -- Table structure for table `user_subscribe_log`
 --
 
-CREATE TABLE `user_subscribe_log` (
-  `id` int(11) UNSIGNED NOT NULL,
+CREATE TABLE IF NOT EXISTS `user_subscribe_log` (
+  `id` int(11) unsigned NOT NULL,
   `user_name` varchar(128) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT '用户名',
   `user_id` int(11) NOT NULL COMMENT '用户 ID',
   `email` varchar(32) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT '用户邮箱',
@@ -1151,7 +1144,7 @@ CREATE TABLE `user_subscribe_log` (
 -- Table structure for table `user_token`
 --
 
-CREATE TABLE `user_token` (
+CREATE TABLE IF NOT EXISTS `user_token` (
   `id` int(11) NOT NULL,
   `token` varchar(256) NOT NULL,
   `user_id` int(11) NOT NULL,
@@ -1165,7 +1158,7 @@ CREATE TABLE `user_token` (
 -- Table structure for table `user_traffic_log`
 --
 
-CREATE TABLE `user_traffic_log` (
+CREATE TABLE IF NOT EXISTS `user_traffic_log` (
   `id` int(11) NOT NULL,
   `user_id` int(11) NOT NULL,
   `u` bigint(20) NOT NULL,
@@ -1197,12 +1190,6 @@ ALTER TABLE `bought`
 --
 ALTER TABLE `commission`
   ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `config`
---
-ALTER TABLE `config`
-  ADD PRIMARY KEY (`name`);
 
 --
 -- Indexes for table `country`
@@ -1262,12 +1249,6 @@ ALTER TABLE `orders`
 -- Indexes for table `package`
 --
 ALTER TABLE `package`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `package_category`
---
-ALTER TABLE `package_category`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -1334,10 +1315,7 @@ ALTER TABLE `tmp_price`
 -- Indexes for table `user`
 --
 ALTER TABLE `user`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `user_name` (`user_name`),
-  ADD KEY `uid` (`id`),
-  ADD KEY `email` (`email`);
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `user_subscribe_log`
@@ -1366,158 +1344,126 @@ ALTER TABLE `user_traffic_log`
 --
 ALTER TABLE `alive_ip`
   MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT;
-
 --
 -- AUTO_INCREMENT for table `bought`
 --
 ALTER TABLE `bought`
   MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT;
-
 --
 -- AUTO_INCREMENT for table `commission`
 --
 ALTER TABLE `commission`
   MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT;
-
 --
 -- AUTO_INCREMENT for table `coupon`
 --
 ALTER TABLE `coupon`
   MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT;
-
 --
 -- AUTO_INCREMENT for table `email_verify`
 --
 ALTER TABLE `email_verify`
   MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT;
-
 --
 -- AUTO_INCREMENT for table `isocodes`
 --
 ALTER TABLE `isocodes`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=254;
-
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=254;
 --
 -- AUTO_INCREMENT for table `link`
 --
 ALTER TABLE `link`
   MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT;
-
 --
 -- AUTO_INCREMENT for table `login_ip`
 --
 ALTER TABLE `login_ip`
   MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT;
-
 --
 -- AUTO_INCREMENT for table `mobile_verify`
 --
 ALTER TABLE `mobile_verify`
   MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT;
-
 --
 -- AUTO_INCREMENT for table `notice`
 --
 ALTER TABLE `notice`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
 --
 -- AUTO_INCREMENT for table `orders`
 --
 ALTER TABLE `orders`
   MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT;
-
 --
 -- AUTO_INCREMENT for table `package`
 --
 ALTER TABLE `package`
   MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `package_category`
---
-ALTER TABLE `package_category`
-  MODIFY `id` int(20) NOT NULL AUTO_INCREMENT;
-
 --
 -- AUTO_INCREMENT for table `password_reset`
 --
 ALTER TABLE `password_reset`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
 --
 -- AUTO_INCREMENT for table `pay_qrcode`
 --
 ALTER TABLE `pay_qrcode`
   MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT;
-
 --
 -- AUTO_INCREMENT for table `rule_list`
 --
 ALTER TABLE `rule_list`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
-
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=9;
 --
 -- AUTO_INCREMENT for table `rule_log`
 --
 ALTER TABLE `rule_log`
   MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT;
-
 --
 -- AUTO_INCREMENT for table `servers`
 --
 ALTER TABLE `servers`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
 --
 -- AUTO_INCREMENT for table `server_info`
 --
 ALTER TABLE `server_info`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
 --
 -- AUTO_INCREMENT for table `server_online_log`
 --
 ALTER TABLE `server_online_log`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
 --
 -- AUTO_INCREMENT for table `telegram_session`
 --
 ALTER TABLE `telegram_session`
   MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT;
-
 --
 -- AUTO_INCREMENT for table `telegram_tasks`
 --
 ALTER TABLE `telegram_tasks`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT;
-
+  MODIFY `id` int(11) unsigned NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `user_subscribe_log`
 --
 ALTER TABLE `user_subscribe_log`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT;
-
+  MODIFY `id` int(11) unsigned NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `user_token`
 --
 ALTER TABLE `user_token`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
 --
 -- AUTO_INCREMENT for table `user_traffic_log`
 --
 ALTER TABLE `user_traffic_log`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-COMMIT;
-
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
