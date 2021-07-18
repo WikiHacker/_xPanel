@@ -182,7 +182,7 @@ cat > /etc/Xray/docker-compose.yml <<-EOF
 version: '3'
 services: 
   $custom_name: 
-    image: frainzy1477/xray-server:latest
+    image: frainzy1477/xray:latest
     volumes:
       - ./config.yml:/etc/Xray/config.yml
       - ./dns.json:/etc/Xray/dns.json
@@ -250,7 +250,7 @@ cat > /etc/Xray/docker-compose.yml <<-EOF
 version: '3'
 services: 
   $custom_name: 
-    image: frainzy1477/xray-server:latest
+    image: frainzy1477/xray:latest
     volumes:
       - ./config.yml:/etc/Xray/config.yml
       - ./dns.json:/etc/Xray/dns.json
